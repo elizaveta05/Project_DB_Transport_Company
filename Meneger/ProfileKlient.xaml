@@ -1,0 +1,154 @@
+﻿<Page x:Class="Travel_agency_Lyapynova.Meneger.ProfileKlient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Travel_agency_Lyapynova.Meneger"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" MinHeight="450" MinWidth="800"
+      Title="ProfileKlient" Background="AliceBlue">
+
+    <Grid>
+        <Grid Margin="0,0,650,0" Background="#FFB3D6F0">
+            <Grid Margin="152,0,-648,0" Background="AliceBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="112*"/>
+                    <RowDefinition Height="113*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Фамилия" HorizontalAlignment="Left" Margin="19,41,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Имя" HorizontalAlignment="Left" Margin="20,77,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Отчество" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="19,145,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Электронная почта " HorizontalAlignment="Left" Margin="20,176,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="tb_surname" HorizontalAlignment="Left" Margin="176,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+                <TextBox x:Name="tb_name" HorizontalAlignment="Left" Margin="176,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+                <TextBox x:Name="tb_patronymic" HorizontalAlignment="Left" Margin="176,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+                <TextBox x:Name="tb_number_phone" HorizontalAlignment="Left" Margin="177,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+                <Label Content="Логин " HorizontalAlignment="Left" Margin="23,99,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Row="1">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Пароль " HorizontalAlignment="Left" Margin="24,133,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Row="1">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="tb_login" HorizontalAlignment="Left" Margin="180,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="194" Grid.Row="1"/>
+                <TextBox x:Name="tb_password" HorizontalAlignment="Left" Margin="180,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Grid.Row="1"/>
+                <TextBox x:Name="tb_email" HorizontalAlignment="Left" Margin="174,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+                <Label Content="Номер паспорта" HorizontalAlignment="Left" Margin="19,23,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Row="1">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="tb_number_passporta" HorizontalAlignment="Left" Margin="173,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <Label Content="Серия паспорта" HorizontalAlignment="Left" Margin="324,25,0,0" VerticalAlignment="Top" Height="24" Width="150" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Row="1">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="tb_seria_passporta" HorizontalAlignment="Left" Margin="448,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <Label Content="Паспортные данные клиента" HorizontalAlignment="Left" Margin="225,221,0,0" VerticalAlignment="Top" Height="24" Width="189" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.RowSpan="2">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Персональные данные клиента" HorizontalAlignment="Left" Margin="213,11,0,0" VerticalAlignment="Top" Height="24" Width="196" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Пользовательские данные" HorizontalAlignment="Left" Margin="227,59,0,0" VerticalAlignment="Top" Height="24" Width="189" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Row="1">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.014"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+
+            </Grid>
+            <Button x:Name="btn_save" Content="Сохранить изменения" HorizontalAlignment="Center" Background="#FF298FDD" Margin="0,10,0,0" VerticalAlignment="Top" Height="24" Width="152" Click="btn_save_klient_Click"/>
+            <Button x:Name="btn_history" Content="История клиента" HorizontalAlignment="Center" Background="#FF298FDD" VerticalAlignment="Top" Height="23" Width="157" Click="btn_history_Click" Margin="0,50,0,0"/>
+            <Button x:Name="btn_delete" Content="Удалить клиента" HorizontalAlignment="Center" Background="#FF298FDD" Margin="0,90,0,0" VerticalAlignment="Top" Height="24" Width="152" Click="btn_delete_klient_Click"/>
+        </Grid>
+    </Grid>
+</Page>

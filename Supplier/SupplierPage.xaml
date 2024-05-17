@@ -1,0 +1,65 @@
+﻿<Page x:Class="Travel_agency_Lyapynova.SupplierPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Travel_agency_Lyapynova"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" MinHeight="450" MinWidth="800"
+      Title="SupplierPage" Background="AliceBlue">
+
+    <Grid>
+        <TextBlock x:Name="tb_welcome" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="22" Width="736" FontSize="18" TextAlignment="Center" />
+        <TextBox x:Name="tb_poisk" HorizontalAlignment="Left" Margin="85,40,0,0" TextWrapping="Wrap" Text="Путевка" VerticalAlignment="Top" Width="149"/>
+        <Button x:Name="btn_poisk" Background="#FF298FDD" Content="Поиск" HorizontalAlignment="Left" Margin="243,41,0,0" VerticalAlignment="Top" Height="19" Width="64" Click="btn_poisk_Click" RenderTransformOrigin="0.442,0.486" BorderBrush="#FF298FDD"/>
+        <Button x:Name="btn_add"  Content="Добавление тура" HorizontalAlignment="Right" Margin="0,40,294,0" VerticalAlignment="Top" Height="19" Width="158" Click="btn_add_Click" Background="#FF298FDD" BorderBrush="#FF298FDD"/>
+        <ComboBox x:Name="cb_filter" HorizontalAlignment="Right" Margin="0,39,80,0" VerticalAlignment="Top" Width="183" 
+            SelectedIndex="-1" SelectionChanged="cb_filter_SelectionChanged" Height="20" Background="#FF9BB9EB">
+            <ComboBoxItem Content="Мои туры"/>
+            <ComboBoxItem Content="Все туры"/>
+        </ComboBox>
+        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="3,70,10,1" RenderTransformOrigin="0.5,0.5">
+            <FlowDocumentScrollViewer.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.432"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.667"/>
+                </TransformGroup>
+            </FlowDocumentScrollViewer.RenderTransform>
+            <FlowDocument>
+                <Section>
+                    <BlockUIContainer>
+                        <ListView Name="LViewTour" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" Margin="5" SelectionChanged="LViewTour_SelectionChanged">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Black" BorderThickness="1" Background="{Binding Background}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="1" Margin="5">
+                                                <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding Duration, StringFormat={}{0} дней}"/>
+                                                <TextBlock Text="{Binding Country.Name}"/>
+                                                <TextBlock Text="{Binding City.Name}"/>
+                                                <TextBlock Text="{Binding Cost, StringFormat={}{0} Рублей}"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </BlockUIContainer>
+                </Section>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Page>
