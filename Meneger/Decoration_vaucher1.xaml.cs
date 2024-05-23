@@ -49,15 +49,16 @@ namespace Travel_agency_Lyapynova.Meneger
             {
                 // Получить выбранный тур
                 Tour selectedTour = (Tour)LViewTour.SelectedItem;
-
+                
+                Supplier supplier = TravelAgentsPr21101LyapynovaContext.GetContext().Suppliers.Where(s=>s.SupplierId == selectedTour.SupplierId).FirstOrDefault();
                 // Формирование информации о путевке
                 string message = $"Информация о путевке:\n";
                 message += $"Название: {selectedTour.Name}\n";
-                message += $"Описание: {selectedTour.Descriptions}\n";
+                message += $"Описание: {selectedTour.Descriptions} \n";
                 message += $"Длительность: {selectedTour.Duration}\n";
-                message += $"Цена: {selectedTour.Cost}\n";
+                message += $"Цена: {selectedTour.Cost}\n ";
                 message += $"Место путевки: {selectedTour.Country.Name}, {selectedTour.City.Name}\n";
-                message += $"Поставщик: {selectedTour.Supplier.Name}\n";
+                message += $"Поставщик: {supplier.Name}\n";
 
 
                 // Показать сообщение с информацией и кнопками подтверждения
@@ -98,11 +99,16 @@ namespace Travel_agency_Lyapynova.Meneger
                     .Where(city => city.CountryId == selectedCountryId)
                     .Select(city => city.Name)
                     .ToList();
-
                 cb_city.ItemsSource = citiesInCountry;
-                tours = TravelAgentsPr21101LyapynovaContext.GetContext().Tours.Include(t => t.Country).Include(t => t.City).Where(t => t.Country == cb_country.SelectedItem).ToList();
-                LViewTour.ItemsSource = tours;
 
+                // Отфильтровать туры по выбранной стране
+                tours = TravelAgentsPr21101LyapynovaContext.GetContext().Tours
+                    .Include(t => t.Country)
+                    .Include(t => t.City)
+                    .Where(t => t.Country.CountryId == selectedCountryId)
+                    .ToList();
+
+                LViewTour.ItemsSource = tours;
 
             }
         }
@@ -113,9 +119,27 @@ namespace Travel_agency_Lyapynova.Meneger
             {
                 MessageBox.Show("Выберите страну!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            else if (cb_city.SelectedItem != null) { }
+            else if (cb_city.SelectedItem != null)
             {
-                tours = TravelAgentsPr21101LyapynovaContext.GetContext().Tours.Include(t => t.Country).Include(t => t.City).Where(t => t.Country == cb_country.SelectedItem && t.City == cb_city.SelectedItem).ToList();
+                string selectedCountry = cb_country.SelectedItem.ToString();
+                string selectedCity = cb_city.SelectedItem.ToString();
+
+                var selectedCountryId = TravelAgentsPr21101LyapynovaContext.GetContext().Countries
+                    .Where(c => c.Name == selectedCountry)
+                    .Select(c => c.CountryId)
+                    .FirstOrDefault();
+
+                var selectedCityId = TravelAgentsPr21101LyapynovaContext.GetContext().Cities
+                    .Where(city => city.Name == selectedCity && city.CountryId == selectedCountryId)
+                    .Select(city => city.CityId)
+                    .FirstOrDefault();
+
+                tours = TravelAgentsPr21101LyapynovaContext.GetContext().Tours
+                    .Include(t => t.Country)
+                    .Include(t => t.City)
+                    .Where(t => t.Country.CountryId == selectedCountryId && t.City.CityId == selectedCityId)
+                    .ToList();
+
                 LViewTour.ItemsSource = tours;
             }
         }
@@ -134,7 +158,9 @@ namespace Travel_agency_Lyapynova.Meneger
 
                 if (selectedTourFromDB != null)
                 {
-													//передаём выбранный тур, данные о договоре
+                    int t = selectedTourFromDB.TourId;
+                    int s = service.ContractId;
+					//передаём выбранный тур, данные о договоре
                     NavigationService.Navigate(new Decoration_vaucher2(selectedTourFromDB, service));
                 }
                 else

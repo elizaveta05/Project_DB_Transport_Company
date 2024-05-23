@@ -40,10 +40,7 @@ namespace Travel_agency_Lyapynova.Meneger
 
         }
 
-        private void btn_travel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
 
         private void btn_document_Click(object sender, RoutedEventArgs e)
         {

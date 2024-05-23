@@ -27,6 +27,7 @@ namespace Travel_agency_Lyapynova.Meneger
             klient = TravelAgentsPr21101LyapynovaContext.GetContext().Klients.FirstOrDefault(k => k.KlientId == klient.KlientId);
             LoadKlient(klient);
             this.employeeId = employeeId;
+
         }
 
         public void LoadKlient(Klient klient)
@@ -38,15 +39,33 @@ namespace Travel_agency_Lyapynova.Meneger
             tb_mail.Text = klient.Email;
             tb_passport.Text = klient.PassportNumber + " / " + klient.PassportSerias;
         }
-
         private void btn_next_Click(object sender, RoutedEventArgs e)
         {
-            if (tb_name_dogovor.Text != null && klient != null && employeeId != 0)
-            {
-                Employee employee = TravelAgentsPr21101LyapynovaContext.GetContext().Employees.FirstOrDefault(e => e.EmployeeId == employeeId);
+            string errorMessage = "";
 
+            if (string.IsNullOrEmpty(tb_name_dogovor.Text))
+            {
+                errorMessage += "- Не заполнено наименование договора\n";
+            }
+
+            if (klient == null)
+            {
+                errorMessage += "- Клиент не выбран\n";
+            }
+
+            if (employeeId == 0)
+            {
+                errorMessage += "- Сотрудник не выбран\n";
+            }
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                Employee employee = TravelAgentsPr21101LyapynovaContext.GetContext().Employees.FirstOrDefault(emp => emp.EmployeeId == employeeId);
+
+                int maxid = TravelAgentsPr21101LyapynovaContext.GetContext().ServiceAgreements.Max(em => em.ContractId);
                 ServiceAgreement s = new ServiceAgreement
                 {
+                    ContractId = maxid + 1,
                     KlientId = klient.KlientId,
                     EmployeeId = employee.EmployeeId,
                     DateOfConclusion = DateOnly.FromDateTime(DateTime.Today),
@@ -64,12 +83,12 @@ namespace Travel_agency_Lyapynova.Meneger
                     Decoration_vaucher1 page = new Decoration_vaucher1(s.ContractId);
                     this.NavigationService.Navigate(page);
                 }
-
             }
             else
             {
-                MessageBox.Show("Проверьте данные", "Ошибка", MessageBoxButton.OK);
+                MessageBox.Show($"Проверьте данные:\n{errorMessage}", "Ошибка", MessageBoxButton.OK);
             }
         }
+      
     }
 }

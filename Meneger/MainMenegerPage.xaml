@@ -14,7 +14,6 @@
             <TextBlock x:Name="tb_welcome" HorizontalAlignment="Left" Margin="14,52,0,0" VerticalAlignment="Top" Width="629" FontWeight="Bold" FontSize="16"/>
         </Grid>
         <Button x:Name="btn_list_klients" Content="Клиенты" HorizontalAlignment="Center" Margin="0,168,0,0" VerticalAlignment="Top" Width="151" Background="#FF439CE0" BorderBrush="Black" Click="btn_list_employee_Click"/>
-        <Button x:Name="btn_travel" Content="Оформление путевки" HorizontalAlignment="Center" Margin="0,223,0,0" VerticalAlignment="Top" Width="151" Background="#FF439CE0" BorderBrush="Black" Click="btn_travel_Click"/>
         <Button Content="Профиль" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Background="#FF439CE0" Width="152" Click="Button_Click"/>
         <Button x:Name="btn_document" Content="Оформление документов" HorizontalAlignment="Left" Margin="1,284,0,0" VerticalAlignment="Top" Width="151" Background="#FF439CE0" BorderBrush="Black" Click="btn_document_Click"/>
 

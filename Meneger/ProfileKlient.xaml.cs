@@ -28,6 +28,7 @@ namespace Travel_agency_Lyapynova.Meneger
         public ProfileKlient(int klientId, int employeeId)
         {
             InitializeComponent();
+            this.employeeId = employeeId;
             klient = TravelAgentsPr21101LyapynovaContext.GetContext().Klients.FirstOrDefault(k=>k.KlientId == klientId);
             LoadKlient(klient);
         }

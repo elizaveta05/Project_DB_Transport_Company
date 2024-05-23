@@ -29,6 +29,7 @@ namespace Travel_agency_Lyapynova
         {
             InitializeComponent();
             LoadEmployee();
+            this.employeeId = employeeId;
         }
 
        
