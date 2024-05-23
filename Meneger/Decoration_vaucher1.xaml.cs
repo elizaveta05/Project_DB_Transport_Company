@@ -134,6 +134,7 @@ namespace Travel_agency_Lyapynova.Meneger
 
                 if (selectedTourFromDB != null)
                 {
+													//передаём выбранный тур, данные о договоре
                     NavigationService.Navigate(new Decoration_vaucher2(selectedTourFromDB, service));
                 }
                 else
