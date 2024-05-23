@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,14 +22,17 @@ namespace Travel_agency_Lyapynova.Meneger
     /// </summary>
     public partial class MainMenegerPage : Page
     {
+        public int employeeId;
         public MainMenegerPage(Employee employee)
         {
             InitializeComponent();
+            employeeId=employee.EmployeeId;
+            
         }
 
         private void btn_list_employee_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MenegerPage());
+            NavigationService.Navigate(new MenegerPage(employeeId));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

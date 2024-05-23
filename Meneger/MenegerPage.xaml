@@ -13,7 +13,6 @@
             <Grid Margin="152,1,-648,-1">
                 <Label Content="Туристическое агентство" HorizontalAlignment="Center" Margin="0,3,0,0" VerticalAlignment="Top" Width="648" Height="31" FontSize="16" HorizontalContentAlignment="Center" FontWeight="Bold" BorderBrush="#FF646363" BorderThickness="0,0,0,1"/>
             </Grid>
-            <Button Content="Назад" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Background="#FF439CE0" Width="150" Height="21" Click="Button_Click"/>
         </Grid>
         <TextBox x:Name="tb_poisk" HorizontalAlignment="Left" Margin="164,55,0,0" TextWrapping="Wrap" Text="ФИО" VerticalAlignment="Top" Width="198"/>
         <Button x:Name="btn_poisk" Background="#FF298FDD" Content="Поиск" HorizontalAlignment="Left" Margin="376,55,0,0" VerticalAlignment="Top" Height="19" Width="64" Click="btn_poisk_Click" RenderTransformOrigin="0.442,0.486" BorderBrush="#FF298FDD"/>

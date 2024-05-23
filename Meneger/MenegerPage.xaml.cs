@@ -24,7 +24,8 @@ namespace Travel_agency_Lyapynova
     public partial class MenegerPage : Page
     {
         List<Klient> klient = new List<Klient>();
-        public MenegerPage()
+        public int employeeId;
+        public MenegerPage(int employeeId)
         {
             InitializeComponent();
             LoadEmployee();
@@ -81,7 +82,7 @@ namespace Travel_agency_Lyapynova
 
             if (selectedKlient != null)
             {
-                NavigationService.Navigate(new ProfileKlient(selectedKlient.KlientId));
+                NavigationService.Navigate(new ProfileKlient(selectedKlient.KlientId, employeeId));
                 klientListView.SelectedItem = null;
             }
         }

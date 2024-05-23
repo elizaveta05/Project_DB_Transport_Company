@@ -24,7 +24,8 @@ namespace Travel_agency_Lyapynova.Meneger
     public partial class ProfileKlient : Page
     {
         public Klient klient;
-        public ProfileKlient(int klientId)
+        public int employeeId;
+        public ProfileKlient(int klientId, int employeeId)
         {
             InitializeComponent();
             klient = TravelAgentsPr21101LyapynovaContext.GetContext().Klients.FirstOrDefault(k=>k.KlientId == klientId);
@@ -106,6 +107,11 @@ namespace Travel_agency_Lyapynova.Meneger
                 MessageBox.Show("Клиент успешно удален.", "Успех", MessageBoxButton.OK);
 
             }
+        }
+
+        private void btn_arrange_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Decoration_vaucher(klient, employeeId));
         }
     }
 }

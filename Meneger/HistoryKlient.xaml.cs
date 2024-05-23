@@ -78,6 +78,9 @@ namespace Travel_agency_Lyapynova.Meneger
                                 TourName = tour.Name,
                                 TransportCompany = transport.Company
                             });
+                        } else
+                        {
+                            MessageBox.Show("У клиента нет оформленных туров.", "Предупреждение", MessageBoxButton.OK);
                         }
                     }
                 }
