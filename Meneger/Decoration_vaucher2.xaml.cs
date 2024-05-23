@@ -20,9 +20,11 @@ namespace Travel_agency_Lyapynova.Meneger
     /// </summary>
     public partial class Decoration_vaucher2 : Page
     {
-        public Decoration_vaucher2()
+
+        public Decoration_vaucher2(Tour tour, ServiceAgreement service)
         {
             InitializeComponent();
+
         }
     }
 }
